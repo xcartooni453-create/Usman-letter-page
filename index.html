@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محبت کا ایک قدیمی خط - عثمان کے نام</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Fonts for enhanced Urdu/Arabic aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Marhey:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Nastaliq style font for traditional Urdu look */
+        .urdu-font {
+            font-family: 'Gulzar', serif; /* A beautiful, traditional Urdu font */
+            line-height: 2.2; /* Better line spacing for Urdu */
+            font-size: 1.25rem; /* Large text for mobile readability */
+        }
+        
+        /* Fallback/Decorative Font */
+        .marhey-font {
+            font-family: 'Marhey', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Initial Folded State - Simulating an Envelope */
+        #envelope {
+            width: 90%;
+            max-width: 400px;
+            height: 220px;
+            background-color: #d1b499; /* Aged envelope color */
+            transition: all 0.7s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 3px solid #a38c70;
+            background-image: linear-gradient(135deg, #e3c4a9 0%, #d1b499 100%);
+        }
+
+        /* Heart Icon Styling on Envelope */
+        .envelope-heart {
+            font-size: 40px;
+            color: #ffc107; /* Golden color */
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        /* The Letter Paper */
+        #letter-content {
+            background-color: #fcf8f0; /* Very light parchment/Paper color */
+            color: #3e3220; /* Dark Brown Ink color */
+            width: 95%;
+            max-width: 700px;
+            min-height: 500px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid #a38c70;
+            padding: 4rem 2.5rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        /* Decorative Edges */
+        #letter-content::before, #letter-content::after {
+            content: '';
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            border: 1px dashed #d1b499;
+            top: 1%;
+            left: 1%;
+            border-radius: 6px;
+        }
+
+
+        /* Active/Opened state classes */
+        .opened #envelope {
+            opacity: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            transform: scale(0.1);
+        }
+        .opened #letter-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Signature Area Styling */
+        .signature-area {
+            border-top: 2px dashed #a38c70;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Main Container -->
+    <div id="app" class="w-full flex flex-col items-center justify-center">
+
+        <h1 id="instructions" class="text-xl md:text-3xl font-bold mb-10 text-gray-800 marhey-font text-center">خطِ محبت کھولنے کے لیے لفافے پر پیار سے کلک (Tap) کریں</h1>
+
+        <!-- The Folded Envelope -->
+        <div id="envelope" onclick="openLetter()" class="flex flex-col items-center justify-center">
+            <i class="fas fa-heart envelope-heart"></i>
+            <div class="text-3xl text-gray-900 marhey-font">عزیز از جان، عثمان کے نام</div>
+        </div>
+
+        <!-- The Letter Content (Initially Hidden) -->
+        <div id="letter-content" class="urdu-font">
+            <div class="flex justify-between items-center mb-6 border-b border-gray-400 pb-4">
+                <h2 class="text-2xl font-bold marhey-font">محبت کا ایک قدیمی خط</h2>
+                <i class="fas fa-heart text-red-700 text-3xl animate-bounce"></i>
+            </div>
+            
+            <p class="mb-5">
+                **عزیز از جان، عثمان!**
+            </p>
+            <p class="mb-7">
+                سلامِ مسنون کے بعد،
+                ربِ کائنات سے دعا ہے کہ آپ جہاں بھی ہوں، خیریت اور عافیت سے ہوں۔
+            </p>
+
+            <p class="mb-5">
+                میرے مہربان، اگرچہ بارسلونا کی مسافتیں ہمارے درمیان ایک طویل دوری حائل کیے ہوئے ہیں، مگر یہ بھی حقیقت ہے کہ روح کا سفر زمان و مکاں کی قید سے آزاد ہوتا ہے۔ ان فاصلوں کے باوجود، ہمارا تعلق کسی کمزور ڈور کا محتاج نہیں۔ یہ رشتہ محبت کی وہ لازوال عمارت ہے جس کی بنیاد آپ کی مخلصانہ وفاداری اور کمال کی شفافیت پر قائم ہے۔
+            </p>
+
+            <p class="mb-5">
+                میں آپ پر جو اعتماد رکھتی ہوں، وہ محض ایک دعویٰ نہیں بلکہ یہ ایک قلبی سکون ہے جو آپ کے کردار کی گہرائی سے پھوٹتا ہے۔ آپ نے ہمیشہ اس تعلق میں اس قدر امانت داری اور دیانت کا مظاہرہ کیا ہے کہ میرا دل ہر شک اور ہر اندیشے سے پاک رہتا ہے۔ مجھے ہر لمحہ یہ یقین رہتا ہے کہ آپ کی نیتیں شیشے کی طرح صاف ہیں، اور آپ کے قول و فعل میں سرمو بھی فرق نہیں۔
+            </p>
+
+            <p class="mb-5">
+                یہ آپ کی وہی وفاداری ہے جس کی بنا پر میں خود کو اس رشتے میں محفوظ ترین پناہ گاہ میں محسوس کرتی ہوں۔ جہاں کوئی خوف، کوئی تشویش میرے دل کے قریب نہیں آتی۔ جب بھی میں آپ کے بارے میں سوچتی ہوں، تو ایک اطمینان اور امن کا حصار مجھے گھیر لیتا ہے، کیونکہ میں جانتی ہوں کہ آپ کی جانب سے مجھے کبھی کسی بے وفائی یا بدگمانی کا سامنا نہیں کرنا پڑے گا۔ یہ میرے لیے دنیا کی سب سے بڑی دولت ہے۔
+            </p>
+
+            <p class="mb-10">
+                یہ دوری عارضی ہے، اور میرا ہر دن آپ کی واپسی اور آئندہ قربتوں کی امید میں گزر رہا ہے۔ اپنا خیال رکھنا، میرے ہم سفر۔
+            </p>
+
+            <div class="signature-area flex flex-col items-start">
+                <p class="text-xl font-semibold marhey-font">والسلام،</p>
+                <p class="text-2xl font-bold marhey-font text-red-700 mt-2">آپ کی منتظر،</p>
+                <p class="text-3xl font-extrabold marhey-font mt-1">طیبہ</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const app = document.getElementById('app');
+        const instructions = document.getElementById('instructions');
+
+        function openLetter() {
+            // Add 'opened' class to trigger CSS transitions
+            app.classList.add('opened');
+            // Change instructions after opening
+            instructions.textContent = 'آپ کے لیے ایک محبت بھرا خط!'; 
+            instructions.classList.add('text-red-700');
+            instructions.classList.remove('text-gray-800');
+        }
+    </script>
+</body>
+</html>
+
